@@ -1,0 +1,258 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Muskan Nishad</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  /* Layout: single column, centered 960px wrapper; dark ground, violet accent; header sticks to top. */
+  :root {
+    --bg: #0f0c1a;
+    --surface: #181328;
+    --fg: #f1eefb;
+    --muted: #a9a2c2;
+    --line: #2b2442;
+    --field-line: #3d3460;
+    --accent: #a78bfa;
+    --accent-strong: #c4b5fd;
+    --accent-soft: #2a2145;
+    --btn: #7c3aed;
+    --btn-hover: #6d28d9;
+    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--bg);
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+    margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .bar {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding-block: 12px;
+  }
+  .brand { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+  .brand span { color: var(--accent); }
+  nav ul { display: flex; flex-wrap: wrap; gap: 2px 20px; list-style: none; margin: 0; padding: 0; }
+  nav a { display: block; padding: 6px 0; font-size: 0.95rem; font-weight: 500; color: var(--muted); border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  section { padding-block: 72px; scroll-margin-top: 72px; }
+  section + section { border-top: 1px solid var(--line); }
+
+  .eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.2; letter-spacing: -0.02em; }
+  h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); font-weight: 700; }
+  h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin-bottom: 28px; }
+  h3 { font-size: 1.1rem; font-weight: 600; }
+
+  #home { padding-block: 96px 88px; }
+  .role { font-size: clamp(1.05rem, 2.5vw, 1.3rem); color: var(--muted); margin: 14px 0 0; }
+  .welcome { margin: 20px 0 32px; max-width: 52ch; color: var(--muted); }
+  .btn {
+    display: inline-block;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--btn);
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--btn-hover); }
+
+  .about-card { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; }
+  .about-card p { margin: 4px 0 0; color: var(--muted); }
+  .about-card .name { color: var(--fg); font-size: 1.25rem; font-weight: 600; margin: 0; }
+
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+  .grid.projects { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .card {
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .skills .card { font-weight: 600; text-align: center; padding-block: 24px; }
+  .projects .card { padding: 24px; display: flex; flex-direction: column; gap: 6px; }
+  .projects .card .sub { color: var(--muted); font-size: 0.95rem; }
+  .tag { align-self: flex-start; font-size: 0.75rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; margin-bottom: 8px; }
+
+  form { max-width: 520px; display: grid; gap: 18px; }
+  .field { display: grid; gap: 6px; }
+  label { font-size: 0.9rem; font-weight: 600; }
+  input, textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--fg);
+    background: var(--bg);
+    border: 1px solid var(--field-line);
+    border-radius: 8px;
+    padding: 11px 14px;
+  }
+  textarea { min-height: 140px; resize: vertical; }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+  .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  #form-note { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 520px) {
+    section { padding-block: 56px; }
+    #home { padding-block: 64px 56px; }
+    nav ul { gap: 0 16px; }
+  }
+</style>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#home">Muskan <span>Nishad</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="home">
+    <p class="eyebrow">Welcome</p>
+    <h1>Muskan Nishad</h1>
+    <p class="role">B.Tech CSE | Data Science + AI</p>
+    <p class="welcome">Welcome to my portfolio. Have a look at what I have worked on.</p>
+    <a class="btn" href="#projects">Explore my projects</a>
+  </section>
+
+  <section id="about">
+    <p class="eyebrow">About</p>
+    <h2>About Me</h2>
+    <div class="about-card">
+      <p class="name">Muskan Nishad</p>
+      <p>B.Tech CSE – Data Science + AI</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="eyebrow">Skills</p>
+    <h2>Skills</h2>
+    <div class="grid skills">
+      <div class="card">Core Java</div>
+      <div class="card">Python</div>
+      <div class="card">SQL</div>
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow">Projects</p>
+    <h2>Projects</h2>
+    <div class="grid projects">
+      <article class="card">
+        <span class="tag">Project</span>
+        <h3>Orbin</h3>
+        <span class="sub">Student Career Guidance Platform</span>
+      </article>
+      <article class="card">
+        <span class="tag">Project</span>
+        <h3>ENT Clinic Website</h3>
+      </article>
+      <article class="card">
+        <span class="tag">Project</span>
+        <h3>Landing Page Design</h3>
+      </article>
+      <article class="card">
+        <span class="tag">Project</span>
+        <h3>Data Science and AI Projects</h3>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Contact</h2>
+    <form id="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Send Message</button>
+        <p id="form-note" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>© 2026 Muskan Nishad. All Rights Reserved.</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("contact-form");
+    var note = document.getElementById("form-note");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.elements["name"].value.trim();
+      var email = form.elements["email"].value.trim();
+      var message = form.elements["message"].value.trim();
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !emailOk || !message) {
+        note.textContent = "Please fill in your name, a valid email and a message.";
+        return;
+      }
+      note.textContent = "This form is not connected to an inbox yet, so nothing was sent.";
+    });
+  })();
+</script>
+
+</body></html>
